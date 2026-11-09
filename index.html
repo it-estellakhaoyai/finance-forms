@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- ป้องกันไม่ให้เบราว์เซอร์และ Proxy แคชหน้านี้ -->
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  
+  <title>กำลังเปลี่ยนเส้นทาง...</title>
+
+  <script>
+    (function() {
+      const baseUrl = "https://script.google.com/macros/s/AKfycbyieI8V_4kYC-S5bcuRLF_EfLXj00Kf96u-07wJUrBPxBgZYopf2_MZ0Aye-CZAM1gL3g/exec";
+      
+      // ต่อ Timestamp เพื่อป้องกัน Browser / CDN แคชผลลัพธ์ของปลายทาง (Cache Busting)
+      const targetUrl = baseUrl + (baseUrl.includes('?') ? '&' : '?') + '_t=' + Date.now();
+      
+      // ใช้ replace() เพื่อไม่ให้หน้านี้ถูกบันทึกลงใน Browser History (กด Back แล้วไม่ติด Loop)
+      window.location.replace(targetUrl);
+    })();
+  </script>
+
+  <!-- Fallback กรณีผู้ใช้ปิด JavaScript -->
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=https://script.google.com/macros/s/AKfycbyieI8V_4kYC-S5bcuRLF_EfLXj00Kf96u-07wJUrBPxBgZYopf2_MZ0Aye-CZAM1gL3g/exec">
+  </noscript>
+</head>
+<body>
+  <p>กำลังนำคุณไปยังระบบ... หากหน้าเว็บไม่เปลี่ยนอัตโนมัติ <a href="https://script.google.com/macros/s/AKfycbyieI8V_4kYC-S5bcuRLF_EfLXj00Kf96u-07wJUrBPxBgZYopf2_MZ0Aye-CZAM1gL3g/exec">คลิกที่นี่</a></p>
+</body>
+</html>
